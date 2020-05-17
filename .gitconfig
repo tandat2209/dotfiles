@@ -1,0 +1,12 @@
+[user]
+	name = Tan Dat
+	email = tandat2209@gmail.com
+[core]
+	excludesfile = /Users/datnguyen/.gitignore_global
+	askpass = true
+[commit]
+	template = /Users/datnguyen/.stCommitMsg
+[merge]
+    tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
