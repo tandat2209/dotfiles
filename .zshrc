@@ -51,7 +51,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(you-should-use git docker zsh-autosuggestions zsh-completions autojump osx zsh-syntax-highlighting zsh-vim-mode tmux)
+plugins=(you-should-use git git-open docker zsh-autosuggestions zsh-completions autojump osx zsh-syntax-highlighting)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
