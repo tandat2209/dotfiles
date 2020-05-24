@@ -83,6 +83,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'roryokane/detectindent'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+Plug 'mbbill/undotree'
 
 "*****************************************************************************
 "" Custom bundles
@@ -152,7 +153,7 @@ set expandtab
 set relativenumber
 
 "" Map leader to ,
-let g:mapleader=','
+let g:mapleader=' '
 
 "" Enable hidden buffers
 set hidden
@@ -325,13 +326,18 @@ let g:session_command_aliases = 1
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-syntax on
+if !exists('g:syntax_on')
+	syntax enable
+endif
 set ruler
 set number
 
 let no_buffers_menu=1
 " silent! colorscheme molokai
 " silent! colorscheme codedark
+let g:onedark_color_overrides = {
+\ "black": {"gui": "#000", "cterm": "0", "cterm16": "0" },
+\}
 silent! colorscheme onedark
 set termguicolors
 
@@ -418,8 +424,9 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <Leader>1 :NERDTreeToggle<CR>
-nnoremap - :NERDTreeFind<CR>
+nnoremap <silent> <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <leader><F2> :NERDTreeFind<CR>
+nnoremap <silent> <F5> :UndotreeToggle<cr>
 
 " grep.vim
 let Grep_Default_Options = '-IR'
@@ -554,7 +561,6 @@ endif
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
 
@@ -625,7 +631,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 ""
-nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
+nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
 "*****************************************************************************
 "" Custom configs
