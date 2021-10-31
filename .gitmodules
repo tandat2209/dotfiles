@@ -19,3 +19,6 @@
 [submodule ".oh-my-zsh/custom/plugins/zsh-nvm"]
 	path = .oh-my-zsh/custom/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm
+[submodule ".oh-my-zsh/custom/plugins/ls"]
+	path = .oh-my-zsh/custom/plugins/ls
+	url = https://github.com/zpm-zsh/ls.git
