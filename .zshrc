@@ -51,7 +51,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(you-should-use git git-open docker zsh-autosuggestions zsh-completions autojump osx zsh-syntax-highlighting)
+plugins=(you-should-use git git-open docker zsh-autosuggestions zsh-completions autojump osx zsh-syntax-highlighting react-native ls zsh-nvm)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_AUTO_USE=true
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -106,12 +107,12 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 # For pkg-config to find zlib you may need to set:
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+
+# Created by `userpath` on 2020-12-01 10:06:20
+export PATH="$PATH:/Users/datnguyen/.local/bin"
+eval "$(pyenv init -)"

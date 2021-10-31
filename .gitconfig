@@ -1,12 +1,15 @@
 [user]
-	name = Tan Dat
+	name = Dat Nguyen
 	email = tandat2209@gmail.com
+	signingkey = 2BD7A246D2A23B15
 [core]
 	excludesfile = /Users/datnguyen/.gitignore_global
 	askpass = true
 [commit]
 	template = /Users/datnguyen/.stCommitMsg
 [merge]
-    tool = meld
-[mergetool "meld"]
-	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+	tool = meld
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[diff]
+	guitool = meld
